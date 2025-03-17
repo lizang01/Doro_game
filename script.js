@@ -16,8 +16,11 @@ function showImage() {
     // 构建图片路径
     const imagePath = `game/image/image${validIndex}.jpg`;
 
+    console.log(`Random Number: ${randomNumber}`);
+    console.log(`Valid Index: ${validIndex}`);
+    console.log(`Image Path: ${imagePath}`);
+
     // 显示图片
     const resultImage = document.getElementById('resultImage');
     resultImage.src = imagePath;
 }
-
