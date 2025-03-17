@@ -22,7 +22,7 @@ function showImage() {
 
     // 移动标题到顶部
     const title = document.getElementById('title');
-    title.style.transform = 'translateY(-100%)';
+    title.style.transform = 'translateY(-50%)';
 
     // 隐藏初始输入框和按钮
     const initialInputContainer = document.getElementById('initialInputContainer');
