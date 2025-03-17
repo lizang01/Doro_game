@@ -1,40 +1,23 @@
 function showImage() {
-    const randomNumberInput = document.getElementById('randomNumberInput');
-    const messageDiv = document.getElementById('message');
-    const imageContainer = document.getElementById('imageContainer');
+    const randomNumberInput = document.getElementById('randomNumber');
+    let randomNumber = parseInt(randomNumberInput.value, 10);
 
-    const userInput = parseInt(randomNumberInput.value);
-
-    if (isNaN(userInput) || userInput <= 0) {
-        messageDiv.textContent = '请输入一个有效的正整数。';
+    if (isNaN(randomNumber)) {
+        alert('请输入有效的数字');
         return;
     }
 
-    // 获取图片文件列表
-    fetch('/game/image')
-        .then(response => response.text())
-        .then(data => {
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(data, 'text/html');
-            const links = Array.from(doc.querySelectorAll('a'));
-            const images = links.filter(link => link.href.endsWith('.jpg') || link.href.endsWith('.png'));
+    // 图片总数为17
+    const imageCount = 17;
 
-            if (images.length === 0) {
-                messageDiv.textContent = '没有找到任何图片文件。';
-                return;
-            }
+    // 计算有效的图片索引
+    const validIndex = ((randomNumber - 1) % imageCount) + 1;
 
-            let index = userInput - 1;
-            while (index >= images.length) {
-                index -= images.length;
-            }
+    // 构建图片路径
+    const imagePath = `game/image/image${validIndex}.jpg`;
 
-            const imageUrl = images[index].href;
-            imageContainer.innerHTML = `<img src="${imageUrl}" alt="Doro Image">`;
-            messageDiv.textContent = '';
-        })
-        .catch(error => {
-            console.error('Error fetching images:', error);
-            messageDiv.textContent = '无法加载图片，请稍后再试。';
-        });
+    // 显示图片
+    const resultImage = document.getElementById('resultImage');
+    resultImage.src = imagePath;
 }
+
