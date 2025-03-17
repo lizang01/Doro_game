@@ -1,67 +1,87 @@
-function showImage() {
-    const randomNumberInput = document.getElementById('randomNumber');
-    let randomNumber = parseInt(randomNumberInput.value, 10);
-
-    if (isNaN(randomNumber)) {
-        alert('请输入有效的数字');
-        return;
-    }
-
-    // 图片总数为17
-    const imageCount = 17;
-
-    // 计算有效的图片索引
-    const validIndex = ((randomNumber - 1) % imageCount) + 1;
-
-    // 构建图片路径
-    const imagePath = `game/image/image${validIndex}.jpg`;
-
-    console.log(`Random Number: ${randomNumber}`);
-    console.log(`Valid Index: ${validIndex}`);
-    console.log(`Image Path: ${imagePath}`);
-
-    // 显示图片
-    const resultImage = document.getElementById('resultImage');
-    resultImage.src = imagePath;
-    resultImage.style.opacity = 1;
-
-    // 隐藏输入框和按钮
-    const container = document.querySelector('.container');
-    container.style.opacity = 0.3;
-
-    // 显示重试容器
-    const retryContainer = document.querySelector('.retry-container');
-    retryContainer.style.display = 'flex';
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f9;
+    margin: 0;
 }
 
-function retry() {
-    const newRandomNumberInput = document.getElementById('newRandomNumber');
-    let newRandomNumber = parseInt(newRandomNumberInput.value, 10);
-
-    if (isNaN(newRandomNumber)) {
-        alert('请输入有效的数字');
-        return;
-    }
-
-    // 图片总数为17
-    const imageCount = 17;
-
-    // 计算有效的图片索引
-    const validIndex = ((newRandomNumber - 1) % imageCount) + 1;
-
-    // 构建图片路径
-    const imagePath = `game/image/image${validIndex}.jpg`;
-
-    console.log(`New Random Number: ${newRandomNumber}`);
-    console.log(`Valid Index: ${validIndex}`);
-    console.log(`Image Path: ${imagePath}`);
-
-    // 显示图片
-    const resultImage = document.getElementById('resultImage');
-    resultImage.src = imagePath;
-    resultImage.style.opacity = 1;
-
-    // 清空新输入框
-    newRandomNumberInput.value = '';
+.container {
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.5s ease-in-out;
 }
+
+.input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.retry-container {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.retry-container input[type="number"] {
+    width: 200px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.retry-container button {
+    padding: 15px 30px;
+    border: none;
+    background-color: #dc3545;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.retry-container button:hover {
+    background-color: #c82333;
+}
+
+input[type="number"] {
+    width: 200px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button {
+    padding: 15px 30px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+    transition: opacity 0.5s ease-in-out;
+}
+
+
 
