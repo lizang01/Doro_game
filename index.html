@@ -8,20 +8,19 @@
 </head>
 <body>
     <div class="container">
-        <h1>Doro人生结局模拟器</h1>
-        <div class="input-container">
-            <input type="number" id="randomNumber" placeholder="请输入一个随机数">
-            <button onclick="showImage()">确定</button>
+        <h1 id="title">Doro人生结局模拟器</h1>
+        <div class="input-container" id="initialInputContainer">
+            <input type="number" id="randomNumber" placeholder="输入决定你人生结局的数字">
+            <button onclick="showImage()">开始</button>
         </div>
         <img id="resultImage" src="" alt="结果图片">
-        <div class="retry-container">
+        <div class="retry-container" id="retryContainer">
             <input type="number" id="newRandomNumber" placeholder="不满意？那就重开！！！">
-            <button onclick="retry()">重开</button>
+            <button onclick="retry()">重开！</button>
         </div>
     </div>
 
     <script src="script.js"></script>
 </body>
 </html>
-
 
