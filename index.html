@@ -9,12 +9,17 @@
 <body>
     <div class="container">
         <h1>Doro人生结局模拟器</h1>
-        <input type="number" id="randomNumber" placeholder="请输入一个随机数">
-        <button onclick="showImage()">确定</button>
+        <div class="input-container">
+            <input type="number" id="randomNumber" placeholder="请输入一个随机数">
+            <button onclick="showImage()">确定</button>
+        </div>
         <img id="resultImage" src="" alt="结果图片">
+        <div class="retry-container">
+            <input type="number" id="newRandomNumber" placeholder="重新输入随机数">
+            <button onclick="retry()">重开</button>
+        </div>
     </div>
 
     <script src="script.js"></script>
 </body>
 </html>
-
