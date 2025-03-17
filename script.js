@@ -68,5 +68,3 @@ function retry() {
     // 清空新输入框
     newRandomNumberInput.value = '';
 }
-
-
