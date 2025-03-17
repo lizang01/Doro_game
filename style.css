@@ -32,20 +32,22 @@ body {
 }
 
 .retry-container input[type="number"] {
-    width: 50%;
-    padding: 10px;
-    margin-bottom: 10px;
+    width: 200px;
+    padding: 15px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    font-size: 16px;
 }
 
 .retry-container button {
-    padding: 10px 20px;
+    padding: 15px 30px;
     border: none;
     background-color: #dc3545;
     color: white;
     border-radius: 4px;
     cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
 }
 
 .retry-container button:hover {
@@ -80,3 +82,5 @@ img {
     margin-top: 20px;
     transition: opacity 0.5s ease-in-out;
 }
+
+
